@@ -3,7 +3,6 @@
 // Copyright (C) 2022 Serhiy Kobyakov
 //
 
-
 #include <AccelStepper.h>
 
 // Dynamics of the stepper motor
