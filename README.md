@@ -11,6 +11,7 @@ The software has been tested for errors, stability and speed (bugs free is not g
 3. Open Arduino IDE and set your Arduino board
 4. Check the sketch for errors and upload the sketch to the board.
 
+
 ### How It Works
 The stepper motor in CDROM actuator can be driven by some low power driver, for example [this one](https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide/all).
  Arduino board can drive the stepper driver.
