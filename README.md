@@ -1,5 +1,7 @@
 ## Automation of a CDROM linear actuator using Arduino
 
+![Alt Text](https://github.com/serhiykobyakov/CDROM_linear_actuator_automatization/howitworks.gif)
+
 ### What it does
 
 The software has been tested for errors, stability and speed (bugs free is not guaranteed, see the licence).
