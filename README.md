@@ -6,15 +6,15 @@
 
 I needed some mecnanical laser beam interrupter (optical shutter) and decided to make it myself using garbage. Yes, I like the idea of zero waste way of doing business. Yes, it's damn time consuming way of doing things but let's put all the discussion aside and let me just show you the coding part of the project here.
 
+Here I have only the Arduino sketch without all the other stuff - the circuitry and the case.
+
 The software has been tested for errors, stability and speed (bugs free is not guaranteed, see the licence).
 
 ### How It Works
 
-I have an old CDROM which has working linear actuator. It's not very fast for optical shutter but it's cheap. So I need some low power stepper motor driver, an Arduino board to control it and a case to hold it all together. The stepper motor is the [Easy Driver](https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide/all) and any Arduino board is siutable for this task.
+I have an old CDROM which has working linear actuator. It's not very fast for optical shutter but it's cheap. So I need some low power stepper motor driver, an Arduino board to control it and a case to hold it all together. The stepper motor is the [Easy Driver](https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide/all) - you can see the red board in the bottom left corner of the image. Any Arduino board is siutable for this task (not shown in the image).
 
-In this particular case I needed just two extreme positions of the linear actuator corresponding to the stated of the optical shutter: "open" and "close".
-
-Here I have only the Arduino sketch without all the other stuff - the circuitry and the case.
+In this particular case I needed just two extreme positions of the linear actuator corresponding to the optical shutter states "open" and "close".
 
 The device finds the start position using endstop at the initialization. Next you can
 
