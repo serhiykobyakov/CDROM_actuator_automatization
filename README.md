@@ -18,7 +18,7 @@ In this particular case I needed just two extreme positions of the linear actuat
 
 The device finds the start position using endstop at the initialization. Next you can
 
-To open the optical shutter one have to send "o" to serial port, to close it - send "c". Arduino sends back to PC zero ("0") when the process is finished (it si useful to know when the shutter is fully closed or open).
+To open the optical shutter one have to send "o" to serial port, to close it - send "c". Arduino sends back zero ("0") to PC when the process is finished (it si useful to know when the shutter is fully closed or open).
 
 
 ### Install
