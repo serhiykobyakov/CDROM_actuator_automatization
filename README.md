@@ -2,7 +2,13 @@
 
 ![Alt Text](https://github.com/serhiykobyakov/CDROM_linear_actuator_automatization/blob/main/howitworks.gif)
 
+### What is it
+
+I needed some mecnanical laser beam interrupter (optical shutter) and decided to make it myself using garbage. Yes, I like the idea of zero waste way of doing business. Yes, it's damn time consuming way of doing things but let's put all the discussion aside and let me just show you the coding part of the project here.
+
 ### What it does
+
+I have an old CDROM which has working linear actuator. It's not very fast for optical shutter but it's cheap. So I need some low power stepper motor driver, an Arduino board to control it and a case to hold it all together. The stepper motor is the [Easy Driver](https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide/all) and any Arduino board is siutable for this task.
 
 The software has been tested for errors, stability and speed (bugs free is not guaranteed, see the licence).
 
@@ -15,8 +21,6 @@ The software has been tested for errors, stability and speed (bugs free is not g
 
 
 ### How It Works
-The stepper motor in CDROM actuator can be driven by some low power driver, for example [this one](https://learn.sparkfun.com/tutorials/easy-driver-hook-up-guide/all).
- Arduino board can drive the stepper driver.
 
 In this particular case I needed just two extreme positions of the linear actuator corresponding to the stated of the optical shutter: "open" and "close".
 
