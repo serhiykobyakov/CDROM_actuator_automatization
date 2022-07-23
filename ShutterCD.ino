@@ -63,8 +63,8 @@ void openShutter()
 
 
 void shutterInit()
-// we have to begin the work with the device
-// from the carriage positioning
+// carriage positioning
+// this is what we must start the work with
 {
   digitalWrite(MotorDisable, LOW);
   
