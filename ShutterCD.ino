@@ -1,5 +1,10 @@
 // ShutterCD
 //
+// Sketch for optical shutter
+// made using old CDROM linear actuator
+//
+// Version: 2022-01-01
+//
 // Copyright (C) 2022 Serhiy Kobyakov
 //
 
