@@ -25,11 +25,12 @@ int theMax=1950;     // maximum number of steps
                      // for this particular linear actuator
                      // need to be checked for each new device!
 
-// Define some steppers and the pins the will use
+// Define stepper and the pins it will use
 AccelStepper stepper1(AccelStepper::DRIVER, STEPPER1_STEP_PIN, STEPPER1_DIR_PIN);
 
 
 void setup()
+// main setup routine
 {
   pinMode(MotorDisable, OUTPUT);
   digitalWrite(MotorDisable, HIGH);
@@ -62,6 +63,8 @@ void openShutter()
 
 
 void shutterInit()
+// we have to begin the work with the device
+// from the carriage positioning
 {
   digitalWrite(MotorDisable, LOW);
   
@@ -97,9 +100,11 @@ boolean hitEndStop()
   }
 }
 
+
 void loop()
 {
   if (Serial.available() > 0 ) {
+
     char data_in = (char) Serial.read();
 
     switch (data_in) {
@@ -117,6 +122,7 @@ void loop()
       break;
     default:  // do nothing if other input happens
         break;
+
     }// end of switch    
 
   }// end of Serial.available

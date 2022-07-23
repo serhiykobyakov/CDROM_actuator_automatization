@@ -16,9 +16,7 @@ I have an old CDROM which has working linear actuator. It's not very fast for op
 
 In this particular case I needed just two extreme positions of the linear actuator corresponding to the optical shutter states "open" and "close".
 
-The device finds the start position using endstop at the initialization. Next you can
-
-To open the optical shutter one have to send "o" to serial port, to close it - send "c". Arduino sends back zero ("0") to PC when the process is finished (it si useful to know when the shutter is fully closed or open).
+The device finds the start position using endstop at the initialization. To open the optical shutter one have to send "o" to serial port, to close it - send "c". Arduino sends back zero ("0") to PC when the process is finished (it si useful to know when the shutter is fully closed or open).
 
 
 ### Install
