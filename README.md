@@ -1,6 +1,6 @@
 ## Automation of a CDROM linear actuator using Arduino
 
-![Alt Text](https://github.com/serhiykobyakov/CDROM_linear_actuator_automatization/blob/main/howitworks.gif)
+![Alt Text](https://github.com/serhiykobyakov/CDROM_linear_actuator_automatization/blob/main/howitworks.webp)
 
 ### What is it
 
