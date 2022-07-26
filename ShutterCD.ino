@@ -3,7 +3,7 @@
 // Sketch for optical shutter
 // made using old CDROM linear actuator
 //
-// Version: 2022-07-23
+// Version: 2022-07-26
 //
 // Copyright (C) 2022 Serhiy Kobyakov
 //
