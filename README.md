@@ -6,9 +6,9 @@
 
 I needed some mecnanical laser beam interrupter (optical shutter) and decided to make it myself using garbage. Yes, I like the idea of zero waste way of doing business. Yes, it's damn time consuming way of doing things but let's put all the discussion aside and let me just show you the coding part of the project here.
 
-Here I have only the Arduino sketch without all the other stuff - the circuitry and the case.
+Here I have only the software without all the other stuff - the circuitry and the case.
 
-The software has been tested for errors, stability and speed (bugs free is not guaranteed, see the licence).
+The software has been tested for errors, stability and speed.
 
 ### How It Works
 
@@ -21,10 +21,16 @@ The device finds the start position using endstop at the initialization. To open
 
 ### Install
 
+## Arduino
+
 1. Make directory "ShutterCD" in the sketchbook directory on your PC (it is "Arduino" by default, check the preferences in Arduino IDE).
 2. Put the ShutterCD.ino into "ShutterCD" directory.
 3. Open Arduino IDE and set your Arduino board
 4. Check the sketch for errors and upload the sketch to the board.
+
+## Free Pascal
+
+1.
 
 
 ### How To Setup The Device
