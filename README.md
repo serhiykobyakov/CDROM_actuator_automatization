@@ -30,7 +30,9 @@ The device finds the start position using endstop at the initialization. To open
 
 ### Free Pascal
 
-1.
+1. Download ShutterCD.pas and ShutterCD.ini
+2. Get ArduinoDevice.pas from [my Arduino device repository](https://github.com/serhiykobyakov/Arduino_device_FPC) 
+3. Use repository info and and see the comments in files to get it work
 
 
 ## How To Setup The Device
