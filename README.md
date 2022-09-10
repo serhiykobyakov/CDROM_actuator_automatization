@@ -25,8 +25,8 @@ The device finds the start position using endstop at the initialization. To open
 
 1. Make directory "ShutterCD" in the sketchbook directory on your PC (it is "Arduino" by default, check the preferences in Arduino IDE).
 2. Put the ShutterCD.ino into "ShutterCD" directory.
-3. Open Arduino IDE and set your Arduino board
-4. Check the sketch for errors and upload the sketch to the board.
+3. Open Arduino IDE and set your Arduino board.
+4. Compile the sketch and upload it to the board.
 
 ### Free Pascal
 
