@@ -1,11 +1,13 @@
 unit ShutterCD;
 
-{Copyright: (c) Serhiy Kobyakov
+{
+Optical shutter using old CDROM drive
+ShutterCD unit
+Version 11.09.2022
 
-Version: 05.09.2022}
+(c) Serhiy Kobyakov
+}
 
-
-{$mode objfpc}{$H+}
 
 interface
 
@@ -40,23 +42,25 @@ constructor ShutterCD_device.Init(_ComPort: string);
 var
   MyForm: TForm;
   MyLabel: TLabel;
-  AppIni: TIniFile;
-  UpperInitStr, iniFile: string;
+//  AppIni: TIniFile;
+//  iniFile: string;
+  UpperInitStr: string;
 begin
 // -----------------------------------------------------------------------------
 // the device ID string with which it responds to '?'
   theDeviceID := 'ShutterCD';
 // -----------------------------------------------------------------------------
-
+{
   iniFile := Application.Location + theDeviceID + '.ini';
-
   If not FileExists(iniFile) then
     begin
       showmessage('File ' + LineEnding + iniFile + LineEnding +
-                  'has not been found!' + LineEnding + LineEnding +
-                  'Please fix it');
+          'procedure ''' + {$I %CURRENTROUTINE%} + ''' failed!' + LineEnding +
+          'File ' + iniFile + 'has not been found!' + LineEnding +
+          'Please fix it');
       halt(0);
     end;
+}
 
 // make a splash screen
 // which shows initialization process
@@ -72,7 +76,6 @@ begin
      AnchorHorizontalCenterTo(MyForm); end;
 
   MyForm.Show; MyForm.BringToFront;
-
   UpperInitStr := 'Initializing ' + theDeviceID + ':' + LineEnding;
 
   MyLabel.Caption:= UpperInitStr + 'Reading ' + theDeviceID + '.ini...';
@@ -80,26 +83,11 @@ begin
 
 // -----------------------------------------------------------------------------
 // Read the device variables from ini file:
-  AppIni := TInifile.Create(iniFile);
-  theComPortSpeed := AppIni.ReadInteger(theDeviceID, 'ComPortSpeed', 115200);
-
-// max time in ms the device may take for its internal initialization
-  theInitTimeout := AppIni.ReadInteger(theDeviceID, 'InitTimeout', 3000);
-
-// max time in ms the device may take before answer
-// it is good idea to measure the longest run
-// before assign the value
-  theLongReadTimeout := AppIni.ReadInteger(theDeviceID, 'LongReadTimeout', 3000);
-
-// max time in ms the device may take before answer
-// in the case of simple and fast queries
-  theReadTimeout := AppIni.ReadInteger(theDeviceID, 'ReadTimeout', 1000);
-
-// other device-specific paremeters must be found in the ini-file
-// and we read them here:
+//  AppIni := TInifile.Create(iniFile);
+// device-specific paremeters:
 
 
-  AppIni.Free;
+//  AppIni.Free;
 // -----------------------------------------------------------------------------
 
 // Use basic device initialization
