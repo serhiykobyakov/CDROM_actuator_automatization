@@ -31,10 +31,12 @@ class ShutterCD(ArduinoDevice):
         self._shutter_open = True
 
     def __del__(self):
-        # open the shutter - this is the default init state
-        self.send_and_get_late_answer('o')
-        
-        # this is the place for the line!
+        # open the shutter before quit the app so the next time it will initialize faster:
+        if self.is_connected:
+            self.send_and_get_late_answer('o')
+
+        # this is the last line in __del__!
+        # close serial communication:
         super().__del__()
 
     @property
@@ -46,7 +48,7 @@ class ShutterCD(ArduinoDevice):
         if not self._shutter_open:
             answer = self.send_and_get_late_answer('o')
             if answer != '0':
-                print(f"Error: got {answer} in reply to \"o\" command!")
+                print(f"Error: got \"{answer}\" in reply to \"o\" command!")
             else:
                 self._shutter_open = True
 
@@ -55,6 +57,15 @@ class ShutterCD(ArduinoDevice):
         if self._shutter_open:
             answer = self.send_and_get_late_answer('c')
             if answer != '0':
-                print(f"Error: got {answer} in reply to \"c\" command!")
+                print(f"Error: got \"{answer}\" in reply to \"c\" command!")
             else:
                 self._shutter_open = False
+
+    def init_pos(self):
+        """ initialize shutter position """
+        if self._shutter_open:
+            answer = self.send_and_get_late_answer('i')
+            if answer != '0':
+                print(f"Error: got \"{answer}\" in reply to \"i\" command!")
+            else:
+                self._shutter_open = True
