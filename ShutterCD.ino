@@ -3,7 +3,7 @@
 // Sketch for optical shutter
 // made using old CDROM linear actuator
 //
-// Version: 2022-07-26
+// Version: 2022-10-10
 //
 // Copyright (C) 2022 Serhiy Kobyakov
 //
@@ -33,21 +33,24 @@ int theMax=1950;     // maximum number of steps
 AccelStepper stepper1(AccelStepper::DRIVER, STEPPER1_STEP_PIN, STEPPER1_DIR_PIN);
 
 
-void setup()
+void setup() {
 // main setup routine
-{
+  // setup Arduino board
   pinMode(MotorDisable, OUTPUT);
   digitalWrite(MotorDisable, HIGH);
   stepper1.setMaxSpeed(TheSpeed);
   stepper1.setAcceleration(TheAcceleration);
+  
+  // first things first: set the device to it's initial position:
+  shutterInit();
+
+  // start serial communication
   Serial.begin(115200);
   while (!Serial);
-  shutterInit();
 }
 
 
-void closeShutter()
-{
+void closeShutter() {
   digitalWrite(MotorDisable, LOW);
   delay(20);
   stepper1.moveTo(theMax);
@@ -56,8 +59,7 @@ void closeShutter()
 }
 
 
-void openShutter()
-{
+void openShutter() {
   digitalWrite(MotorDisable, LOW);
   delay(20);
   stepper1.moveTo(0);
@@ -92,9 +94,8 @@ void shutterInit()
 }
 
 
-boolean hitEndStop()
+boolean hitEndStop() {
 // check if the carriage hit the endstop
-{
   delay(8);
   if (analogRead(theEndStop) < 100) {
     return false;
@@ -105,19 +106,20 @@ boolean hitEndStop()
 }
 
 
-void loop()
-{
+void loop() {
   if (Serial.available() > 0 ) {
-
     char data_in = (char) Serial.read();
-
     switch (data_in) {
     case '?':  // print identification string
       delay(4);
-      Serial.println("Shutter CD");
+      Serial.println("ShutterCD");
       break;
     case 'o':  // open shutter
       openShutter();
+      Serial.println("0");
+      break;
+    case 'i':  // shutter init
+      shutterInit();
       Serial.println("0");
       break;
     case 'c':  // close shutter
@@ -126,8 +128,6 @@ void loop()
       break;
     default:  // do nothing if other input happens
         break;
-
-    }// end of switch    
-
+    }// end of switch
   }// end of Serial.available
 }
